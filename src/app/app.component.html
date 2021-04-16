@@ -1,0 +1,30 @@
+<div class="toolbar" role="banner">
+    <span>Fizzbuzz Frontend for Testers</span>
+    <div class="spacer"></div>
+</div>
+
+<div class="content" role="main">
+
+    <h2>Convert Element</h2>
+
+    <div class="card-container">
+        <mat-form-field>
+            <mat-label>Convert Element</mat-label>
+            <input matInput type="number" name="element" value="0" (change)="setElement($event)">
+        </mat-form-field>
+        <button mat-button color="primary" (click)="convertElement()">Convert Element</button>
+    </div>
+
+    <h2>Generate Sequence</h2>
+
+    <div class="card-container">
+        <mat-form-field>
+            <mat-label>Generate Sequence</mat-label>
+            <input matInput type="number" name="sequence" value="0" (change)="setSequence($event)">
+        </mat-form-field>
+        <button mat-button color="primary" (click)="generateSequence()">Generate Sequence</button>
+    </div>
+
+</div>
+
+<router-outlet></router-outlet>
