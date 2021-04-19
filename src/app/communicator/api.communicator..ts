@@ -7,17 +7,14 @@ export class ApiCommunicator {
     constructor(private http: HttpClient) { }
 
     async convertElement(value: number): Promise<string> {
-        return await this.get<string>(`/element/${value}`);
+        return await this.http
+          .get(`/api/element/${value}`, { responseType: 'text' })
+          .toPromise();
     }
 
     async generateSequence(value: number): Promise<string[]> {
-        return await this.get<string[]>(`/sequence/${value}`);
-    }
-
-    get<T>(endpoint: string): Promise<T> {
-        const response: Promise<any> =
-            this.http.get(`${endpoint}`).toPromise();
-        console.log('response: ', response);
-        return response;
+        return await this.http
+          .get<string[]>(`/api/sequence/${value}`)
+          .toPromise();
     }
 }

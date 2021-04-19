@@ -15,6 +15,10 @@
         <button mat-button color="primary" (click)="convertElement()">Convert Element</button>
     </div>
 
+    <div class="card-container" *ngIf="convertedElement">
+        Converted element: {{ convertedElement }}
+    </div>
+
     <h2>Generate Sequence</h2>
 
     <div class="card-container">
@@ -23,6 +27,13 @@
             <input matInput type="number" name="sequence" value="0" (change)="setSequence($event)">
         </mat-form-field>
         <button mat-button color="primary" (click)="generateSequence()">Generate Sequence</button>
+    </div>
+
+    <div class="card-container" *ngIf="sequence.length">
+        <strong>Sequence:</strong>
+        <ul>
+            <li *ngFor="let element of sequence">{{ element }}</li>
+        </ul>
     </div>
 
 </div>

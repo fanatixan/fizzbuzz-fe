@@ -11,6 +11,8 @@ import { ApiCommunicator } from './communicator/api.communicator.';
 export class AppComponent {
     title = 'fizzbuzz-fe';
     testForm: FormGroup;
+    convertedElement: string = '';
+    sequence: string[] = [];
 
     constructor(
         private apiCommunicator: ApiCommunicator,
@@ -26,9 +28,7 @@ export class AppComponent {
     }
 
     async convertElement(): Promise<void> {
-        console.log(this.testForm.controls.element.value);
-        const result: string = await this.apiCommunicator.convertElement(this.testForm.controls.element.value);
-        console.log(result);
+        this.convertedElement = await this.apiCommunicator.convertElement(this.testForm.controls.element.value);
     }
 
     setSequence(event: any) {
@@ -36,8 +36,6 @@ export class AppComponent {
     }
 
     async generateSequence(): Promise<void> {
-        console.log(this.testForm.controls.sequence.value);
-        const result: string[] = await this.apiCommunicator.generateSequence(this.testForm.controls.sequence.value);
-        console.log(result);
+        this.sequence = await this.apiCommunicator.generateSequence(this.testForm.controls.sequence.value);
     }
 }
