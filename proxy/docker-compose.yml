@@ -1,0 +1,8 @@
+version: '3'
+services:
+  proxy:
+    image: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/sites/:/etc/nginx/conf.d/
