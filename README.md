@@ -17,7 +17,7 @@ proxy available. To use it, you'll have to follow these steps:
    `localhost/`.
 1. Instead of `ng serve`, run the frontend using `ng serve --host 0.0.0.0 --disable-host-check`.
 
-To shut down the proxy, run `docker-compose up` in the `proxy` subfolder of this project.
+To shut down the proxy, run `docker-compose down` in the `proxy` subfolder of this project.
 
 ## Code scaffolding
 
