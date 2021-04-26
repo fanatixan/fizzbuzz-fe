@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ApiCommunicator } from './communicator/api.communicator.';
+import { ApiCommunicator } from './communicator/api.communicator';
 
 @Component({
     selector: 'app-root',
